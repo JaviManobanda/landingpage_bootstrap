@@ -1,0 +1,63 @@
+:root{
+    --color_green_platzi:#97c93e
+}
+
+#header img{
+    width: 80px;
+}
+
+.text-platzi{
+    color: var(--color_green_platzi) !important
+}
+
+
+.btn-platzi{
+    background-color: var(--color_green_platzi);
+}
+
+.btn-platzi:hover{
+    background-color: #749a30;
+}
+
+.main .carousel-inner img{
+    max-height: 70vh;
+    object-fit: cover;
+    filter: grayscale(50%);
+}
+
+#carousel{
+    position: relative;
+}
+
+#carousel .overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+#carousel .overlay .container,
+#carousel .overlay .row{
+    height: 100%;
+}
+
+#carousel .overlay a{
+    text-decoration: none;
+}
+
+#carousel .overlay a:hover{
+    color: var(--color_green_platzi);
+}
+
+
+#footer{
+    background: linear-gradient(90deg, #1c3643, #273b47 25%, #1e5472);
+}
+
+#footer a{
+    color: aliceblue;
+    text-decoration: none;
+}
