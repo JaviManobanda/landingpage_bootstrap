@@ -16,43 +16,64 @@
 
     <title>Platzi Conf</title>
   </head>
-  <body>
+  <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0">
     <!-- Header -->
-    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
+    <nav
+      id="header"
+      class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top"
+    >
+      <div class="container-fluid dropdown">
         <a class="navbar-brand" href="#">
           <img src="./assets/images/platzi-logo.png" alt="Platzi Logo" />
           Conf Hawaii
         </a>
         <button
+          id="btnToggle"
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
+          data-bs-target="#navbar"
+          aria-controls="navbar"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbar">
           <ul class="navbar-nav ms-auto mb-2">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
+              <a
+                name="itemToggle"
+                class="nav-link"
+                aria-current="page"
+                href="#main"
                 >La conferencia</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Los oradores</a>
+              <a name="itemToggle" class="nav-link" href="#speakers"
+                >Los oradores</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">El lugar y la fecha</a>
+              <a name="itemToggle" class="nav-link" href="#place-time"
+                >El lugar y la fecha</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Conviertet en orador</a>
+              <a name="itemToggle" class="nav-link" href="#orador"
+                >Conviertet en orador</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link text-platzi" href="#">Comprar tickets</a>
+              <a
+                name="itemToggle"
+                class="nav-link text-platzi"
+                data-bs-toggle="modal"
+                data-bs-target="#modalCompra"
+                href="#"
+                >Comprar tickets</a
+              >
             </li>
           </ul>
         </div>
@@ -62,7 +83,7 @@
 
     <!-- Main -->
 
-    <section class="main">
+    <section class="main" id="main">
       <div
         id="carousel"
         class="carousel slide"
@@ -107,7 +128,12 @@
                   Te esperamos!
                 </p>
                 <a class="btn btn-outline-light" href=".">Quiero ser orador</a>
-                <button class="btn btn-platzi" type="button">
+                <button
+                  class="btn btn-platzi"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalCompra"
+                >
                   Comprar tickets
                 </button>
               </div>
@@ -137,12 +163,15 @@
                 alt="Foto de Freddy"
               />
               <div class="card-body">
-                <h5 class="card-title">Freddy Vega</h5>
+                <div class="badges mb-0">
+                  <span class="badge bg-warning text-dark me-2">Startup</span>
+                  <span class="badge bg-info">Marca Personal</span>
+                </div>
+                <h5 class="card-title mb-2">Freddy Vega</h5>
                 <p class="card-text">
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </p>
-                Cras imperdiet justo neque, vitae dictum lacus consequat sed.
               </div>
             </div>
           </div>
@@ -154,12 +183,15 @@
                 alt="Foto de Freddy"
               />
               <div class="card-body">
-                <h5 class="card-title">Christian Van Der H</h5>
+                <div class="badges mb-0">
+                  <span class="badge bg-warning text-dark me-2">Bitcoins</span>
+                  <span class="badge bg-info">Networking</span>
+                </div>
+                <h5 class="card-title mb-2">Christian Van Der H</h5>
                 <p class="card-text">
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </p>
-                Cras imperdiet justo neque, vitae dictum lacus consequat sed.
               </div>
             </div>
           </div>
@@ -171,12 +203,17 @@
                 alt="Foto de Sacha Lifszyc"
               />
               <div class="card-body">
-                <h5 class="card-title">Sacha Lifszyc</h5>
+                <div class="badges mb-0">
+                  <span class="badge bg-warning text-dark me-2"
+                    >JavaScript</span
+                  >
+                  <span class="badge bg-info">React</span>
+                </div>
+                <h5 class="card-title mb-2">Sacha Lifszyc</h5>
                 <p class="card-text">
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </p>
-                Cras imperdiet justo neque, vitae dictum lacus consequat sed.
               </div>
             </div>
           </div>
@@ -184,6 +221,114 @@
       </div>
     </section>
     <!-- Speakers -->
+
+    <!-- Lugar y fecha -->
+    <section id="place-time">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-lg-6 ps-0 pe-0">
+            <img src="./assets//images/honolulu.jpg" alt="ciudad honolulu" />
+          </div>
+          <div class="info col-12 col-lg-6 pt-4">
+            <div class="info-container">
+              <h2>Honolulu - Octubre 2025</h2>
+              <p>
+                es la capital y localidad más grande del estado de Hawái, en los
+                Estados Unidos. Honolulu es la más sureña de entre las
+                principales ciudades estadounidenses. Aunque el nombre de
+                Honolulu se refiere al área urbana en la costa sureste de la
+                isla de Oahu
+              </p>
+              <a class="btn btn-outline-light text-light mb-4" href=""
+                >Conoce más</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Lugar y fecha -->
+
+    <!-- Speaker -->
+    <section id="orador" class="pt-2 pb-2">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <small class="text-uppercase"> Conviértete en un </small>
+            <h2 class="text-uppercase">Orador</h2>
+          </div>
+          <div class="row">
+            <div class="col text-center">
+              Incribete como orador para dar una charla
+              <abbr
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Charlas de 5 min"
+                >ignite</abbr
+              >
+              . Cuentanos de que quieres hablar!
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="col col-md-10 offset-md-1 col-lg-8 offset-lg-2 pt-4 pb-4"
+            >
+              <form action="">
+                <div class="row">
+                  <div class="form-group col-12 col-md-6 pb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Nombre"
+                      aria-label="Nombre"
+                      autocomplete="given-name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group col-12 col-md-6 pb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Apellido"
+                      aria-label="Apellido"
+                      autocomplete="family-name"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="form-group col">
+                    <textarea
+                      name=""
+                      id=""
+                      cols="30"
+                      rows="5"
+                      class="form-control form-control-lg"
+                    ></textarea>
+
+                    <small class="form-text text-muted">
+                      Recuerda incluir un título para tu charla
+                    </small>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="d-grid gap-2 mt-3">
+                      <input
+                        type="submit"
+                        class="btn btn-primary text-light btn-platzi"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Speaker -->
+
     <!-- Footer -->
     <footer id="footer" class="pb-4 pt-4">
       <div class="container">
@@ -211,6 +356,64 @@
     </footer>
     <!-- Footer -->
 
+    <!-- Modals -->
+    <div
+      class="modal fade"
+      id="modalCompra"
+      tabindex="-1"
+      aria-labelledby="modalCompraLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalCompraLabel">Comprar Tickets</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Formulario -->
+            <form action="">
+              <div class="row">
+                <div class="col">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Username"
+                      aria-label="Username"
+                      aria-describedby="basic-addon1"
+                    />
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <div class="alert alert-warning" role="alert">
+              Recibirás un correo de confirmación
+            </div>
+            <!-- Formulario -->
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button type="button" class="btn btn-platzi">Comparar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modals -->
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -219,7 +422,7 @@
       integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
       crossorigin="anonymous"
     ></script>
-
+    <script src="./index.js"></script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>

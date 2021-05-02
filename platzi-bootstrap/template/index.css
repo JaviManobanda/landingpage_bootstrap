@@ -52,6 +52,28 @@
     color: var(--color_green_platzi);
 }
 
+.badges{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#place-time{
+    background-color: #343a40;
+    color: white;
+}
+
+#place-time img{
+    width: 100%;
+}
+
+#place-time .info{
+    display: flex;
+    align-items: center;
+}
+
+#place-time  .info-container{
+    padding: 0px 35px;
+}
 
 #footer{
     background: linear-gradient(90deg, #1c3643, #273b47 25%, #1e5472);
